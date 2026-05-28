@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    colors.xml - Defines color constants used throughout the app
+    Using hex color codes (like #3b82f6) for consistency
+-->
+
+<resources>
+    <!-- Light theme colors -->
+    <color name="light_gray">#f0f0f0</color>  <!-- Light gray background -->
+    <color name="blue_500">#3b82f6</color>  <!-- Blue for buttons -->
+    <color name="blue_700">#1d4ed8</color>  <!-- Darker blue -->
+    <color name="teal_200">#80cbc4</color>  <!-- Teal accent -->
+    
+    <!-- Dark theme colors -->
+    <color name="dark_blue_gray">#1e293b</color>  <!-- Dark background for reason page -->
+    <color name="red_600">#dc2626</color>  <!-- Red for warnings -->
+    <color name="red_800">#991b1b</color>  <!-- Dark red for countdown page -->
+    <color name="white">#ffffff</color>  <!-- White text -->
+    <color name="light_gray_text">#cbd5e1</color>  <!-- Light gray text -->
+    <color name="green_500">#10b981</color>  <!-- Green for "hibernate now" button -->
+</resources>
+
+

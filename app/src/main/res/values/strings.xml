@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    strings.xml - Stores all text strings used in the app
+    This makes it easy to translate the app to other languages later
+    It's also better for organization - all text in one place
+-->
+
+<resources>
+    <!-- App name shown in app drawer and settings -->
+    <string name="app_name">Sleep Enforcer</string>
+    
+    <!-- Main Activity strings -->
+    <string name="app_active">💤 Healthy Sleep Enforcer is Active</string>
+    <string name="warning_at">⏰ Warning at: %1$s</string>
+    <string name="shutdown_at">🛑 Shutdown check at: %1$s</string>
+    <string name="settings_button">Settings</string>
+    
+    <!-- Settings Activity strings -->
+    <string name="settings_title">Settings</string>
+    <string name="warning_time_label">Warning Time (HH:MM):</string>
+    <string name="warning_time">21:15</string>
+    <string name="shutdown_time_label">Shutdown Time (HH:MM):</string>
+    <string name="shutdown_time">22:00</string>
+    <string name="save_settings">Save Settings</string>
+    <string name="settings_saved">Settings saved successfully!</string>
+    <string name="invalid_time_format">Invalid time format. Please use HH:MM (e.g., 21:55)</string>
+    
+    <!-- Reason Activity strings -->
+    <string name="time_for_bed">🌙 It\'s %1$s - Time for Bed!</string>
+    <string name="why_stay_up">Why do you need to stay up?</string>
+    <string name="submit_reason">Submit Reason</string>
+    <string name="enter_reason_hint">Enter your reason here...</string>
+    
+    <!-- Countdown Activity strings -->
+    <string name="final_warning">⚠️ FINAL WARNING</string>
+    <string name="hibernate_countdown">System will enter sleep mode in: %1$ds</string>
+    <string name="hibernating">Entering sleep mode...</string>
+    <string name="hibernate_now">💾 Enter Sleep Mode Now</string>
+    <string name="have_valid_reason">⏱️ I Have a Valid Reason</string>
+    
+    <!-- Extension granted message -->
+    <string name="extension_granted">✅ Valid reason accepted!\n\nYou have %1$d more minutes.</string>
+    
+    <!-- Warning notification -->
+    <string name="warning_notification_title">Bedtime Reminder</string>
+    <string name="warning_notification_text">⏰ 5 minutes until shutdown!\n\nPlease wrap up your work.</string>
+</resources>
+
+

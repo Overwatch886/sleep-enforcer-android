@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    themes.xml - Defines the visual style (colors, fonts, etc.) for your app
+    Material Design 3 is Google's modern design system
+-->
+
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme - Sleek Slate Dark theme for all screens! -->
+    <style name="Theme.SleepEnforcer" parent="Theme.Material3.DayNight.NoActionBar">
+        <!-- Primary color - used for buttons, highlights -->
+        <item name="colorPrimary">@color/blue_500</item>
+        <!-- Background color -->
+        <item name="android:colorBackground">#0f172a</item>
+        <!-- Primary text color -->
+        <item name="android:textColorPrimary">@color/white</item>
+        <!-- Secondary text color -->
+        <item name="android:textColorSecondary">@color/light_gray_text</item>
+    </style>
+
+    <!-- Dark theme for warning/countdown screens -->
+    <style name="Theme.SleepEnforcer.Dark" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="colorPrimary">@color/red_600</item>
+        <item name="android:colorBackground">#1e1b4b</item>
+        <item name="android:textColorPrimary">@color/white</item>
+    </style>
+
+</resources>
+
+

@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 
+    backup_rules.xml - Defines what data should be backed up
+    This is required for Android 12+ (API 31+)
+-->
+<full-backup-content>
+    <!-- Include SharedPreferences in backup -->
+    <include domain="sharedpref" path="." />
+</full-backup-content>
+
+

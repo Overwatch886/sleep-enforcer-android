@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#1e1b4b"
+    android:padding="24dp"
+    tools:context=".CountdownActivity"
+>
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/final_warning"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="#fca5a5"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="64dp" />
+
+    <!-- Countdown Display -->
+    <TextView
+        android:id="@+id/countdownLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hibernate_countdown"
+        android:textSize="18sp"
+        android:textStyle="bold"
+        android:textColor="#fbbf24"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@id/titleLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp" />
+
+    <!-- Hibernate Now Button -->
+    <Button
+        android:id="@+id/hibernateButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/hibernate_now"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:backgroundTint="#ef4444"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/countdownLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="40dp"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:paddingTop="16dp"
+        android:paddingBottom="16dp" />
+
+    <!-- I Have a Valid Reason Button -->
+    <Button
+        android:id="@+id/reasonButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/have_valid_reason"
+        android:textSize="13sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/blue_500"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/hibernateButton"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="20dp"
+        android:paddingStart="24dp"
+        android:paddingEnd="24dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

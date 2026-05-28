@@ -1,0 +1,66 @@
+// This file configures how your Android app is built
+// It tells Android Studio what libraries to use and how to compile your code
+
+plugins {
+    id  'com.android.application'  // This makes it an Android app (not a library)
+    id 'org.jetbrains.kotlin.android'  // This enables Kotlin language support
+}
+
+android {
+    namespace = 'com.sleepenforcer.app'  // Unique identifier for your app
+    compileSdk = 34  // Android version to compile against (Android 14)
+
+    defaultConfig {
+        applicationId = "com.sleepenforcer.app"  // Your app's unique ID on Google Play
+        minSdk =26  // Minimum Android version that can run this app (Android 8.0)
+        targetSdk = 34  // Android version you're targeting (Android 14)
+        versionCode = 1  // Internal version number (increment for updates)
+        versionName = "1.0"  // Version shown to users
+
+        testInstrumentationRunner = "androidx.test.runner.AndroidJUnitRunner"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled = false  // Don't shrink code in release builds (set to true for production)
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+    
+    compileOptions {
+        sourceCompatibility = JavaVersion.VERSION_17  // Java 17 compatibility
+        targetCompatibility = JavaVersion.VERSION_17
+    }
+    
+    kotlinOptions {
+        jvmTarget = '17'  // Kotlin targets Java 17
+    }
+    
+    buildFeatures {
+        viewBinding = true  // Enables view binding (easier way to access UI elements)
+    }
+}
+
+
+    dependencies {
+        // Core Android libraries
+        implementation 'androidx.core:core-ktx:1.13.0'  // Kotlin extensions for Android
+        implementation 'androidx.appcompat:appcompat:1.7.1'  // Backward compatibility library
+        implementation 'com.google.android.material:material:1.13.0'  // Material Design components
+        implementation 'androidx.constraintlayout:constraintlayout:2.2.1'  // Layout manager
+
+        // Lifecycle components (for managing activities and fragments)
+        implementation 'androidx.lifecycle:lifecycle-runtime-ktx:2.10.0'
+        implementation 'androidx.lifecycle:lifecycle-service:2.10.0'  // For background services
+
+        // WorkManager for background tasks
+        implementation 'androidx.work:work-runtime-ktx:2.9.0'
+
+        // Testing libraries
+        testImplementation 'junit:junit:4.13.2'
+        androidTestImplementation 'androidx.test.ext:junit:1.3.0'
+        androidTestImplementation 'androidx.test.espresso:espresso-core:3.7.0'
+    }
+
+
+

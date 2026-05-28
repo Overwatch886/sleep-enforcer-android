@@ -1,0 +1,143 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0f172a"
+    android:padding="16dp"
+    tools:context=".SettingsActivity">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/settingsTitle"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/settings_title"
+        android:textSize="22sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"/>
+
+    <!-- Warning Time Label -->
+    <TextView
+        android:id="@+id/warningTimeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/warning_time_label"
+        android:textSize="14sp"
+        android:textColor="@color/light_gray_text"
+        app:layout_constraintTop_toBottomOf="@id/settingsTitle"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp" />
+
+    <!-- Warning Time Input -->
+    <EditText
+        android:id="@+id/warningTimeEdit"
+        android:importantForAutofill="no"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="@string/warning_time"
+        android:textColorHint="#475569"
+        android:inputType="time"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:textColor="#1e293b"
+        android:background="@android:drawable/edit_text"
+        app:layout_constraintTop_toBottomOf="@id/warningTimeLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Shutdown Time Label -->
+    <TextView
+        android:id="@+id/shutdownTimeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Bedtime (HH:MM):"
+        android:textSize="14sp"
+        android:textColor="@color/light_gray_text"
+        app:layout_constraintTop_toBottomOf="@id/warningTimeEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp" />
+
+    <!-- Shutdown Time Input -->
+    <EditText
+        android:id="@+id/shutdownTimeEdit"
+        android:importantForAutofill="no"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="22:00"
+        android:textColorHint="#475569"
+        android:inputType="time"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:textColor="#1e293b"
+        android:background="@android:drawable/edit_text"
+        app:layout_constraintTop_toBottomOf="@id/shutdownTimeLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Wake Time Label -->
+    <TextView
+        android:id="@+id/wakeTimeLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Wake Time (HH:MM):"
+        android:textSize="14sp"
+        android:textColor="@color/light_gray_text"
+        app:layout_constraintTop_toBottomOf="@id/shutdownTimeEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        android:layout_marginTop="24dp"
+        android:layout_marginStart="16dp" />
+
+    <!-- Wake Time Input -->
+    <EditText
+        android:id="@+id/wakeTimeEdit"
+        android:importantForAutofill="no"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:hint="06:00"
+        android:textColorHint="#475569"
+        android:inputType="time"
+        android:textSize="16sp"
+        android:padding="12dp"
+        android:textColor="#1e293b"
+        android:background="@android:drawable/edit_text"
+        app:layout_constraintTop_toBottomOf="@id/wakeTimeLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="8dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp" />
+
+    <!-- Save Button -->
+    <Button
+        android:id="@+id/saveButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/save_settings"
+        android:textSize="16sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/blue_500"
+        android:textColor="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@id/wakeTimeEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
+        android:padding="16dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

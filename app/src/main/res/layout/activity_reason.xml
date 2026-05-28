@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0f172a"
+    android:padding="24dp"
+    tools:context=".ReasonActivity">
+
+    <!-- Title -->
+    <TextView
+        android:id="@+id/titleLabel"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="@string/time_for_bed"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        android:gravity="center"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="64dp" />
+
+    <!-- Question Label -->
+    <TextView
+        android:id="@+id/questionLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/why_stay_up"
+        android:textSize="14sp"
+        android:textColor="@color/light_gray_text"
+        app:layout_constraintTop_toBottomOf="@id/titleLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp" />
+
+    <!-- Attempts Remaining Label -->
+    <TextView
+        android:id="@+id/attemptsLabel"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Attempts remaining: 3"
+        android:textSize="14sp"
+        android:textStyle="bold"
+        android:textColor="@color/red_600"
+        app:layout_constraintTop_toBottomOf="@id/questionLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="12dp" />
+
+    <!-- Reason Edit Text Input (Corrected Squished Width Bug!) -->
+    <EditText
+        android:id="@+id/reasonEdit"
+        android:layout_width="0dp"
+        app:layout_constraintWidth_percent="0.9"
+        android:layout_height="wrap_content"
+        android:importantForAutofill="no"
+        android:hint="@string/enter_reason_hint"
+        android:inputType="textCapSentences|textMultiLine"
+        android:textSize="15sp"
+        android:ems="10"
+        android:textColor="#1e293b"
+        android:textColorHint="#475569"
+        android:background="@android:drawable/edit_text"
+        android:padding="16dp"
+        android:minHeight="48dp"
+        android:imeOptions="actionDone"
+        app:layout_constraintTop_toBottomOf="@id/attemptsLabel"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="16dp" />
+
+    <!-- Submit Button -->
+    <Button
+        android:id="@+id/submitButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/submit_reason"
+        android:textSize="15sp"
+        android:textStyle="bold"
+        android:backgroundTint="@color/blue_500"
+        android:textColor="@color/white"
+        app:layout_constraintTop_toBottomOf="@id/reasonEdit"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        android:layout_marginTop="24dp"
+        android:paddingStart="32dp"
+        android:paddingEnd="32dp"
+        android:paddingTop="12dp"
+        android:paddingBottom="12dp" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
