@@ -12,7 +12,7 @@ buildscript {
     dependencies {
         // Kotlin syntax requires parentheses and double quotes
 
-        classpath("com.android.tools.build:gradle:8.13.1")
+        classpath("com.android.tools.build:gradle:8.1.2")
         classpath("org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlinversion")
     }
 }
