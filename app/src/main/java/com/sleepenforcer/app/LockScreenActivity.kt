@@ -12,6 +12,8 @@ import android.widget.Button
 import android.widget.TextView
 import androidx.activity.OnBackPressedCallback
 import androidx.appcompat.app.AppCompatActivity
+import android.os.Handler
+import android.os.Looper
 
 class LockScreenActivity : AppCompatActivity() {
 
@@ -19,6 +21,9 @@ class LockScreenActivity : AppCompatActivity() {
     private lateinit var submitReasonButton: Button
     private lateinit var sharedPreferences: SharedPreferences
     private lateinit var scheduleManager: SleepScheduleManager
+    private val handler = Handler(Looper.getMainLooper())
+    private var enforceRunnable: Runnable? = null
+    private var isEnforceLoopRunning = false
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -62,6 +67,36 @@ class LockScreenActivity : AppCompatActivity() {
         })
 
         enforceLockState()
+        setupEnforceLoop()
+    }
+
+    private fun setupEnforceLoop() {
+        enforceRunnable = object : Runnable {
+            override fun run() {
+                if (scheduleManager.isInsideSleepWindow()) {
+                    if (!isFinishing && !isDestroyed && !hasWindowFocus()) {
+                        val intent = Intent(this@LockScreenActivity, LockScreenActivity::class.java).apply {
+                            flags = Intent.FLAG_ACTIVITY_REORDER_TO_FRONT
+                        }
+                        startActivity(intent)
+                    }
+                    handler.postDelayed(this, 1000)
+                }
+            }
+        }
+    }
+
+    private fun startEnforceLoop() {
+        if (!isEnforceLoopRunning) {
+            isEnforceLoopRunning = true
+            enforceRunnable?.let { handler.post(it) }
+        }
+    }
+
+    private fun stopEnforceLoop() {
+        isEnforceLoopRunning = false
+        enforceRunnable?.let { handler.removeCallbacks(it) }
+        enforceRunnable = null
     }
 
     private fun enforceLockState() {
@@ -90,6 +125,7 @@ class LockScreenActivity : AppCompatActivity() {
         super.onResume()
         Log.d("LockScreenActivity", "onResume: Checking lock state")
         enforceLockState()
+        setupEnforceLoop()
     }
 
     override fun onPause() {
@@ -104,6 +140,11 @@ class LockScreenActivity : AppCompatActivity() {
                 startActivity(intent)
             }
         }
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
+        stopEnforceLoop()
     }
 
     @Deprecated("Deprecated in Java")
